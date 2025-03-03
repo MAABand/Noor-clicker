@@ -1,0 +1,119 @@
+body {
+  background-image: url(images/background.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  color: white;
+}
+
+.navbar {
+  background: transparent;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 60px;
+  padding: 0;
+  left: 0;
+}
+
+.navbar a {
+  flex: 1;
+  text-align: center;
+  height: 100%;
+  line-height: 60px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar a.active {
+  background: #002f5e;
+  color: #ffffff;
+  transform: scale(1.03);
+}
+
+.navbar a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #e0f2ff;
+}
+
+/* Shop Container with Glassy/Frosted Effect and Increased Transparency */
+.shop-container {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background: rgba(0, 31, 61, 0.4); /* Lighter dark blue with more transparency */
+  border-radius: 10px;
+  backdrop-filter: blur(10px); /* Frosted glass blur effect */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Slight shadow for depth */
+}
+
+/* Shop Item with More Transparency */
+.shop-item {
+  background: rgba(0, 31, 61, 0.5); /* Darker shade with more transparency for items */
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Subtle shadow for items */
+}
+
+/* Button */
+button {
+  background: #0056b3; /* Darker blue button */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background: #003b6d; /* Darker blue on hover */
+}/* SweetAlert2 Custom Styling */
+.swal-popup {
+  background-color: #001f3d; /* Darker blue background */
+  color: white; /* White text */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Slightly stronger shadow */
+}
+
+.swal-confirm-btn {
+  background-color: #0056b3; /* Darker blue button */
+  color: white; /* White text */
+  border-radius: 5px;
+  border: none;
+  padding: 10px 20px;
+}
+
+.swal-cancel-btn {
+  background-color: #cc0000; /* Darker red button for cancel */
+  color: white;
+  border-radius: 5px;
+  border: none;
+  padding: 10px 20px;
+}
+
+/* Button hover effects */
+.swal-confirm-btn:hover {
+  background-color: #003b6d; /* Even darker blue on hover */
+}
+
+.swal-cancel-btn:hover {
+  background-color: #990000; /* Darker red on hover */
+}

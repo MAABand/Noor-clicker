@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shop</title>
+  <link rel="stylesheet" href="shop.css">
+  <!-- SweetAlert2 CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<body>
+  
+  <div class="navbar">
+    <a href="shop.html" class="active">Shop</a>
+    <a href="index.html">Game</a>
+    <a href="#leaderboard">Leaderboard</a>
+  </div>
+  
+  <div class="shop-container">
+    <h1>Upgrade Shop</h1>
+    <p>Coins: <span id="coins">0</span></p>
+    
+    <div class="shop-item">
+      <h2>Auto Clicker</h2>
+      <p>Automatically clicks every second.</p>
+      <button onclick="buyUpgrade('autoClicker', 50)">Buy (50 Coins)</button>
+    </div>
+    
+    <div class="shop-item">
+      <h2>Click Multiplier</h2>
+      <p>Increase click value by 2x.</p>
+      <button onclick="buyUpgrade('clickMultiplier', 100)">Buy (100 Coins)</button>
+    </div>
+  </div>
+  
+  <script src="shop.js"></script>
+</body>
+
+</html>

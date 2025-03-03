@@ -1,0 +1,94 @@
+#noor_clicker{
+  text-align: center;
+  margin-top: 50px; 
+  font-size: 50px; 
+  color:rgb(255, 245, 238);
+} 
+body{
+  background-image: url(images/background.jpg); 
+  background-repeat:no-repeat;
+  background-position: center; 
+  background-attachment: fixed; 
+  background-size: cover; 
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+} 
+.circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position:absolute ;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%); 
+  cursor: pointer;
+}
+
+.circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.score{
+  text-align: center; 
+  color:rgb(255, 245, 238);
+  font-size: 30px;
+} 
+#score{
+  font-size:27px; 
+} 
+/* Navbar container - Transparent background */
+.navbar {
+  background: transparent; /* Removes background */
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 60px;
+  padding: 0;
+  box-shadow: none; /* Removes shadow */
+  left: 0;
+}
+
+/* Navbar buttons */
+.navbar a {
+  flex: 1;
+  text-align: center;
+  height: 100%;
+  line-height: 60px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  border-radius: 10px;
+  transition: all 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Active tab styling */
+.navbar a.active {
+  background: #002f5e;
+  color: #ffffff;
+  transform: scale(1.03);
+}
+
+/* Hover effect */
+.navbar a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #e0f2ff;
+}
+
+/* Prevents the button from being highlighted on click */
+.navbar a:focus {
+  outline: none;
+}
