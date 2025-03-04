@@ -9,29 +9,39 @@ const images = [
 
 let currentIndex = 0;
 let score = 0;
+let clickMultiplier = 1;
+let autoClickerInterval = null;
 
 // Load saved data from localStorage
 function loadGameData() {
-  score = parseInt(localStorage.getItem('score') || "0");
-  let upgrades = JSON.parse(localStorage.getItem('upgrades') || "{}");
+  score = parseInt(localStorage.getItem("score") || "0");
+  let upgrades = JSON.parse(localStorage.getItem("upgrades") || "{}");
   
   // Apply Click Multiplier (default 1x, increases with purchases)
   clickMultiplier = (upgrades.clickMultiplier || 0) + 1;
   
   // Start Auto-Clicker if purchased
-  if (upgrades.autoClicker > 0) {
-    setInterval(() => {
-      score += upgrades.autoClicker; // Each auto-clicker adds 1 point per second
-      updateScore();
-    }, 1000);
-  }
+  startAutoClicker(upgrades.autoClicker || 0);
+  
+  // Start background music
+  startBackgroundMusic();
   
   updateScore();
 }
 
+// Function to start Auto-Clicker
+function startAutoClicker(autoClickerLevel) {
+  if (autoClickerLevel > 0 && !autoClickerInterval) {
+    autoClickerInterval = setInterval(() => {
+      score += autoClickerLevel;
+      updateScore();
+    }, 1000);
+  }
+}
+
 // Save the score to localStorage
 function saveScore() {
-  localStorage.setItem('score', score);
+  localStorage.setItem("score", score);
 }
 
 // Update score display
@@ -42,11 +52,23 @@ function updateScore() {
 
 // Function to cycle images and update the score
 function cycleImages() {
-  score += clickMultiplier; // Apply click multiplier
+  score += clickMultiplier;
   currentIndex = (currentIndex + 1) % images.length;
-  document.getElementById('circle-image').src = images[currentIndex];
+  document.getElementById("circle-image").src = images[currentIndex];
   
   updateScore();
+}
+
+// Function to play background music
+function startBackgroundMusic() {
+  let music = document.getElementById("bg-music");
+  
+  // Ensure the music plays even if the user reloads the page
+  music.volume = 0.5; // Adjust volume (0 to 1)
+  music.loop = true;
+  music.play().catch(() => {
+    console.log("User interaction needed to play audio.");
+  });
 }
 
 // Load game data when the page loads
